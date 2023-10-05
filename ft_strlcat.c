@@ -6,7 +6,7 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:53:07 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/05 13:46:59 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/05 20:51:40 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dstlen;
 	size_t	srclen;
 
+	if (dst == 0 && dstsize == 0)
+		return (dstsize + ft_strlen(src));
 	dstlen = 0;
 	while (dstlen + 1 < dstsize && dst[dstlen] != 0)
 		dstlen++;
-	if (dst[dstlen] != 0)
+	if (dst[dstlen] != 0 || dstsize == 0)
 		return (dstsize + ft_strlen(src));
 	srclen = 0;
 	while (dstlen + srclen + 1 < dstsize && src[srclen] != 0)

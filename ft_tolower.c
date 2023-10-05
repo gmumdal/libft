@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 20:49:26 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/05 17:48:19 by hyeongsh         ###   ########.fr       */
+/*   Created: 2023/10/05 21:28:49 by hyeongsh          #+#    #+#             */
+/*   Updated: 2023/10/05 21:30:12 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_tolower(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

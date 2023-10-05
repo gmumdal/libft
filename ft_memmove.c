@@ -6,7 +6,7 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:18:01 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/05 12:40:28 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/05 20:35:11 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const char	*str_src;
 	size_t		count;
 
+	if (dst == 0 && src == 0)
+		return (dst);
 	str_dst = dst;
 	str_src = src;
 	if (dst < src)

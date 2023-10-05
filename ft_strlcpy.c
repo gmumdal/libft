@@ -6,7 +6,7 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:30:40 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/05 12:52:42 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/05 20:52:32 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	count;
 
+	if (dst == 0 && dstsize == 0)
+		return (ft_strlen(src));
 	count = 0;
 	if (dstsize == 0)
 		return (ft_strlen(src));

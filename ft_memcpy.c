@@ -6,7 +6,7 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 09:53:13 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/05 12:49:41 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/05 20:35:01 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char		*str_dst;
 	const char	*str_src;
 
+	if (dst == 0 && src == 0)
+		return (dst);
 	str_dst = dst;
 	str_src = src;
 	count = 0;
