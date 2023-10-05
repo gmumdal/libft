@@ -6,7 +6,7 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 19:56:31 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/04 21:53:07 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:08:28 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@
 # include <stdio.h>
 # include <string.h>
 # include <strings.h>
-
-typedef unsigned long	t_size;
+# include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-t_size	ft_strlen(const char *s);
-void	*ft_memset(void *b, int c, t_size len);
-void	ft_bzero(void *s, t_size n);
+size_t	ft_strlen(const char *s);
+void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 #endif
