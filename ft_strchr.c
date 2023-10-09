@@ -6,7 +6,7 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 21:35:21 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/05 23:24:08 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/08 14:27:42 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s != 0)
 	{
-		if (*s == (char)c)
+		if (*s == (const char)c)
 			return ((char *)s);
 		s++;
 	}
-	if (c == 0)
+	if ((char)c == 0)
 		return ((char *)s);
 	return (0);
 }
