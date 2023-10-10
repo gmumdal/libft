@@ -6,13 +6,13 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 21:17:51 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/09 20:54:24 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/10 12:15:39 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_addlst(t_list *lst, t_list *head,
+static int	ft_addlst(t_list *lst, t_list *head,
 		void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*cur;
@@ -24,7 +24,7 @@ int	ft_addlst(t_list *lst, t_list *head,
 		cur = ft_lstnew(tempcon);
 		if (cur == 0 && tempcon != 0)
 		{
-			free(tempcon);
+			del(tempcon);
 			ft_lstclear(&head, del);
 			return (0);
 		}
@@ -45,7 +45,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	head = ft_lstnew(tempcon);
 	if (head == 0 && tempcon != 0)
 	{
-		free(tempcon);
+		del(tempcon);
 		return (0);
 	}
 	lst = lst->next;

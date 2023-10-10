@@ -6,7 +6,7 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 20:36:20 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/08 20:33:45 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/09 21:22:58 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static size_t	ft_countword(char const *s, char c)
 	return (count);
 }
 
-size_t	ft_inlen(char const *s, char c)
+static size_t	ft_inlen(char const *s, char c)
 {
 	size_t	size;
 
