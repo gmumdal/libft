@@ -18,7 +18,7 @@ bonus : $(OBJS) $(OBJS_B)
 
 $(OBJS_B) :
 	$(CC) $(CFLAGS) -c $(SRCS_B)
-	ar rsc $(NAME) $(OBJS_B)
+	ar rsc $(NAME) $(OBJS) $(OBJS_B)
 
 clean :
 	rm -rf $(OBJS)
