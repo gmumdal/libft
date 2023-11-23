@@ -1,9 +1,7 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -MMD -MP
 NAME = libft.a
-CFLAGS = -MMD -MP
 DEP = $(patsubst %.c,%.d,$(SRCS))
--include $(DEP)
 SRCS = ft_strjoin.c ft_striteri.c ft_atoi.c \
 		ft_strlcat.c ft_bzero.c ft_strlcpy.c \
 		ft_calloc.c ft_memchr.c ft_strlen.c \
@@ -32,9 +30,10 @@ $(NAME) : $(OBJS)
 $(OBJS) :
 	$(CC) $(CFLAGS) -c $(SRCS)
 
+-include $(DEP)
+
 clean :
 	rm -rf $(OBJS)
-	rm -rf $(OBJS_B)
 	rm -rf $(DEP)
 
 fclean : clean
