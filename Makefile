@@ -1,7 +1,6 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -MMD -MP
+CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-DEP = $(patsubst %.c,%.d,$(SRCS))
 SRCS = ft_strjoin.c ft_striteri.c ft_atoi.c \
 		ft_strlcat.c ft_bzero.c ft_strlcpy.c \
 		ft_calloc.c ft_memchr.c ft_strlen.c \
@@ -21,20 +20,18 @@ SRCS = ft_strjoin.c ft_striteri.c ft_atoi.c \
 		ft_printf.c buf_func.c info_func.c csn_format.c \
 		di_format.c xp_format.c u_format.c util_func.c 
 OBJS = $(SRCS:.c=.o)
+INC = libft.h
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
 	ar rsc $@ $(OBJS)
 
-$(OBJS) :
+$(OBJS) : $(SRCS) $(INC)
 	$(CC) $(CFLAGS) -c $(SRCS)
-
--include $(DEP)
 
 clean :
 	rm -rf $(OBJS)
-	rm -rf $(DEP)
 
 fclean : clean
 	rm -rf $(NAME)
